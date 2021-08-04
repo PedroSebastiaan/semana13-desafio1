@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
   # GET /groups/new
   def new
     @group = Group.new
+    @group.events.build
   end
 
   # GET /groups/1/edit
@@ -65,7 +66,7 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:member, :debut_date, :gender, :name)
+      params.require(:group).permit(:member, :debut_date, :gender, :name, events_attributes: [:id, :date, :participant, :duration, :_destroy])
     end
 
     def set_selects 
