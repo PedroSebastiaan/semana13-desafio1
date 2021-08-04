@@ -1,12 +1,13 @@
 class Group < ApplicationRecord
+
+    Group.includes(:events)
+
     has_many :events, dependent: :destroy
     accepts_nested_attributes_for :events
     enum gender: { BoyBand: 0, GirlBand: 1, Band: 3 }
 
-
-
     def to_s
-        "#{name}"
+        name
     end
 
     def events_count
