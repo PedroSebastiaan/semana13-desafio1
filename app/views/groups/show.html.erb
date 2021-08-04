@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
   <strong>Member:</strong>
   <%= @group.member %>
 </p>
@@ -13,6 +18,26 @@
 <p>
   <strong>Gender:</strong>
   <%= @group.gender %>
+</p>
+
+<p>
+  <strong>Currently events:</strong>
+  <%= @group.current_events %>
+</p>
+
+<p>
+  <strong>Last event:</strong>
+  <%= @group.last_events %>
+</p>
+
+<p>
+  <strong>Maxium participants:</strong>
+  <%= @group.max_part %>
+</p>
+
+<p>
+  <strong>Longest Event:</strong>
+  <%= @group.long_event %>
 </p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

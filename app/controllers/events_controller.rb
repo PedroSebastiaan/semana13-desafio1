@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @groups = Group.all
   end
 
   # GET /events/1/edit
@@ -64,6 +65,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:date, :participant, :duration)
+      params.require(:event).permit(:date, :participant, :duration, :group_id)
     end
 end

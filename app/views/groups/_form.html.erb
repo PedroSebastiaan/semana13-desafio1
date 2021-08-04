@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :member %>
     <%= form.number_field :member %>
   </div>
@@ -22,9 +27,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
-    <%= form.number_field :gender %>
-  </div>
+    <%= form.label :gender, "Gender" %>
+    <%= form.select :gender, options_for_select(@genders) %>
+  </div> 
 
   <div class="actions">
     <%= form.submit %>

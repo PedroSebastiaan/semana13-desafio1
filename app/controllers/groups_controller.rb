@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :set_selects, only: %i[new edit create update] 
 
   # GET /groups or /groups.json
   def index
@@ -64,6 +65,10 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:member, :debut_date, :gender)
+      params.require(:group).permit(:member, :debut_date, :gender, :name)
     end
+
+    def set_selects 
+      @genders= Group.genders.keys.to_a 
+    end 
 end
