@@ -6,6 +6,11 @@ class Group < ApplicationRecord
     accepts_nested_attributes_for :crews
     enum gender: { BoyBand: 0, GirlBand: 1, Band: 3 }
 
+    validates :name, presence: true
+    validates :debut_date, presence: true
+    validates :gender, presence: true
+    validates :member, presence: true
+
     def to_s
         name
     end
