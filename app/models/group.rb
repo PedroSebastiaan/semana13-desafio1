@@ -35,7 +35,7 @@ class Group < ApplicationRecord
     end
 
     def last_events
-        last_date = (0-0-0)
+        last_date = Date.new(0000-00-0)
         self.events.each do |event|
             if event.date > last_date
                 last_date = event.date
