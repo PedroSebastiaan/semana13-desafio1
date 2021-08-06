@@ -18,6 +18,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @groups = Group.all
   end
 
   # POST /events or /events.json

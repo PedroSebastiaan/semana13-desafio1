@@ -66,7 +66,7 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.require(:group).permit(:member, :debut_date, :gender, :name, events_attributes: [:id, :date, :participant, :duration, :_destroy])
+      params.require(:group).permit(:member, :debut_date, :gender, :name, {events_attributes: [:id, :date, :participant, :duration, :_destroy], crews_attributes: [:id, :name]})
     end
 
     def set_selects 

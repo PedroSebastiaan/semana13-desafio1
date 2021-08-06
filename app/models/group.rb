@@ -3,6 +3,7 @@ class Group < ApplicationRecord
     has_many :events, dependent: :destroy
     has_many :crews, dependent: :destroy
     accepts_nested_attributes_for :events
+    accepts_nested_attributes_for :crews
     enum gender: { BoyBand: 0, GirlBand: 1, Band: 3 }
 
     def to_s
@@ -35,7 +36,11 @@ class Group < ApplicationRecord
                 last_date = event.date
             end
         end
-        last_date.strftime("%Y %B %A")
+        if last_date != (0-0-0)
+            last_date.strftime("%Y %B %A")
+        else
+            nil
+        end
     end
 
     def max_part

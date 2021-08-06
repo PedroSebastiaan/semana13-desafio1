@@ -31,25 +31,6 @@
     <%= form.select :gender, options_for_select(@genders) %>
   </div> 
 
-  <h3>First event with us:</h3>
-  <%= form.fields_for :events do |event_form| %>
-    <div class="field">
-      <%= event_form.label :date %>
-      <%= event_form.date_select :date %>
-    </div>
-
-    <div class="field">
-      <%= event_form.label :participant %>
-      <%= event_form.number_field :participant %>
-    </div>
-
-    <div class="field">
-      <%= event_form.label :duration %>
-      <%= event_form.number_field :duration %>
-    </div> 
-  <% end %>
-
-
   <div class="actions">
     <%= form.submit %>
   </div>

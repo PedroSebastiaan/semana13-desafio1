@@ -1,0 +1,9 @@
+<li class="control-group nested-fields">
+    <div class="controls">
+        <%= f.fields_for :group do |crew_group| %>
+            <%= crew_group.text_field :name %>
+        <% end %>
+
+        <%= link_to_remove_association "Remove", f %>
+    </div>
+</li>
