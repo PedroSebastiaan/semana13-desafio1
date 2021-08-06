@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :crews
   resources :events
   resources :groups
   root 'groups#index'

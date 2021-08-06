@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
 
     has_many :events, dependent: :destroy
+    has_many :crews, dependent: :destroy
     accepts_nested_attributes_for :events
     enum gender: { BoyBand: 0, GirlBand: 1, Band: 3 }
 
