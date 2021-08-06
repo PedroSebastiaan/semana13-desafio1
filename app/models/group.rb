@@ -1,7 +1,5 @@
 class Group < ApplicationRecord
 
-    Group.includes(:events)
-
     has_many :events, dependent: :destroy
     accepts_nested_attributes_for :events
     enum gender: { BoyBand: 0, GirlBand: 1, Band: 3 }
@@ -11,7 +9,11 @@ class Group < ApplicationRecord
     end
 
     def events_count
-        self.events.count
+        total_events = 0
+        self.events.each do |event|
+            total_events += 1
+        end 
+        total_events
     end
 
     def current_events
